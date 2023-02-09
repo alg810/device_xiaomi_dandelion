@@ -18,29 +18,24 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 
-# Nusantara stuff
+# Lineage stuff
 TARGET_BOOT_ANIMATION_RES := 720
 TARGET_USES_BLUR := true
-NAD_BUILD_TYPE := OFFICIAL
-USE_AOSP_CLOCK := true
-TARGET_SUPPORTS_QUICK_TAP := true
-USE_PIXEL_CHARGING := true
-TARGET_SUPPORTS_GOOGLE_RECORDER := true
-IS_PHONE := true
-$(call inherit-product, vendor/nusantara/config/common_full_phone.mk)
+
+$(call inherit-product, vendor/lineage/config/common.mk)
 
 # Inherit from garden device makefile
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := nad_garden
-PRODUCT_DEVICE := garden
+PRODUCT_NAME := lineage_dandelion
+PRODUCT_DEVICE := dandelion
 PRODUCT_BRAND := Redmi
 PRODUCT_MANUFACTURER := xiaomi
 
 # Build info
 TARGET_VENDOR := xiaomi
-TARGET_VENDOR_PRODUCT_NAME := garden
+TARGET_VENDOR_PRODUCT_NAME := dandelion
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="raven-user 12 SP2A.220405.004 8233519 release-keys"
 
